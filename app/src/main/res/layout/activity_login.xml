@@ -8,56 +8,88 @@
 
     <EditText
         android:id="@+id/inputEmail"
-        android:layout_width="344dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="21dp"
+        android:layout_width="299dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/style_main"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:textSize="14dp"
         android:hint="Email"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/inputPassword"
+        android:textColorHint="#AFB0B7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
         android:id="@+id/inputPassword"
-        android:layout_width="344dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="299dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/style_main"
         android:ems="10"
         android:hint="Password"
+        android:textSize="14dp"
+        android:fontFamily="@font/montserrat"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColorHint="#AFB0B7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <com.rey.material.widget.CheckBox
-        android:id="@+id/rememberMe"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="18dp"
-        android:text="Remember Me"
-        app:layout_constraintStart_toEndOf="@+id/rememberMe"
-        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="344dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="184dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/style_button"
         android:text="Login"
+        android:textSize="14sp"
+        android:textColor="#FFF"
+        android:fontFamily="@font/montserrat"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="176dp"
+        android:layout_height="176dp"
+        android:layout_marginTop="86dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btnDaftar"
+        android:layout_width="128dp"
+        android:layout_height="29dp"
+        android:background="#0000"
+        android:fontFamily="@font/montserrat"
+        android:textColor="#AFB0B7"
+        android:text="Daftar Disini"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="140dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="54dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Belum Punya Akun?"
+        android:textAlignment="center"
+        android:textColor="#AFB0B7"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 </androidx.constraintlayout.widget.ConstraintLayout>

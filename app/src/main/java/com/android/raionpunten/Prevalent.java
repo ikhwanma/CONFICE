@@ -1,6 +1,6 @@
 package com.android.raionpunten;
 
-public class CurrentOnline {
+public class Prevalent {
     public static User currentOnlineUser;
 
     public static final String userEmail = "UserEmail";

@@ -28,7 +28,7 @@ import java.util.HashMap;
 
 public class DaftarAdminActivity extends AppCompatActivity {
     private Button btnRegister;
-    private EditText inputNama,inputEmail,inputPassword;
+    private EditText inputNama,inputEmail,inputPassword,inputDate,inPutDomisili,konfirPassword;
     private ProgressDialog loadingbar;
     private FirebaseAuth mAuth;
 
@@ -40,6 +40,9 @@ public class DaftarAdminActivity extends AppCompatActivity {
         inputNama = findViewById(R.id.inputNama);
         inputEmail = findViewById(R.id.inputEmail);
         inputPassword = findViewById(R.id.inputPassword);
+        inputDate = findViewById(R.id.inputDate);
+        inPutDomisili = findViewById(R.id.inputDomisili);
+        konfirPassword = findViewById(R.id.konfirPassword);
         loadingbar = new ProgressDialog(this);
         mAuth = FirebaseAuth.getInstance();
 
@@ -52,27 +55,44 @@ public class DaftarAdminActivity extends AppCompatActivity {
     }
 
     public void createAccount(){
+        Bundle extras = getIntent().getExtras();
+        String jabatan = extras.getString("jenis");
         String nama = inputNama.getText().toString();
+        String tanggal = inputDate.getText().toString();
+        String domisili = inPutDomisili.getText().toString();
+        String konfirmasi = konfirPassword.getText().toString();
         String email = inputEmail.getText().toString();
         String password = inputPassword.getText().toString();
-
-        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            inputEmail.setError("Invalid Email");
+        if(nama.isEmpty()){
+            inputNama.setError("Nama Tidak Boleh Kosong");
+            inputNama.setFocusable(true);
+        }else if(tanggal.length() != 6){
+            inputDate.setError("Tanggal Lahir Salah");
+            inputDate.setFocusable(true);
+        }else if(domisili.isEmpty()){
+            inPutDomisili.setError("Domisili Tidak Boleh Kosong");
+            inPutDomisili.setFocusable(true);
+        } else if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            inputEmail.setError("Email Salah");
             inputEmail.setFocusable(true);
-        }if (password.length()<6){
+        }else if (password.length()<6){
             inputPassword.setError("Password Minimal 6 Karakter");
             inputPassword.setFocusable(true);
-        }if(Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.length()>=6) {
+        }else if(!konfirmasi.equals(password)){
+            konfirPassword.setError("Password Tidak Sama");
+            konfirPassword.setFocusable(true);
+        } else {
             loadingbar.setTitle("Create Account");
             loadingbar.setMessage("Please wait!");
             loadingbar.setCanceledOnTouchOutside(false);
             loadingbar.show();
-            registerUser(nama, email, password);
+            registerUser(nama, email, password,tanggal,domisili,jabatan);
         }
 
 
     }
-    private void registerUser(final String nama, final String email, final String password) {
+    private void registerUser(final String nama, final String email, final String password,final String tanggal,
+                              final String domisili,final String jabatan) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -80,8 +100,8 @@ public class DaftarAdminActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             loadingbar.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            ValidateUser(nama, email, password);
-                            Intent intent = new Intent(DaftarAdminActivity.this,MainActivity.class);
+                            ValidateUser(nama, email, password,tanggal,domisili,jabatan);
+                            Intent intent = new Intent(DaftarAdminActivity.this,LoginActivity.class);
                             startActivity(intent);
                             Toast.makeText(DaftarAdminActivity.this, "Account created", Toast.LENGTH_SHORT).show();
 
@@ -100,7 +120,8 @@ public class DaftarAdminActivity extends AppCompatActivity {
 
     }
 
-    private void ValidateUser(final String nama, String emailAsli, final String password) {
+    private void ValidateUser(final String nama, String emailAsli, final String password,final String tanggal,
+                              final String domisili,final String jabatan) {
         final DatabaseReference Rootref;
         Rootref = FirebaseDatabase.getInstance().getReference();
         final String email = emailAsli.replace("@","%1").replace(".","%2");
@@ -111,6 +132,9 @@ public class DaftarAdminActivity extends AppCompatActivity {
 
                 HashMap<String, Object> userdataMap = new HashMap<>();
                 userdataMap.put("nama",nama);
+                userdataMap.put("tanggal lahir",tanggal);
+                userdataMap.put("domisili",domisili);
+                userdataMap.put("jabatan",jabatan);
                 userdataMap.put("email", email);
                 userdataMap.put("password",password);
 

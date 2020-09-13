@@ -8,52 +8,131 @@
 
     <EditText
         android:id="@+id/inputNama"
-        android:layout_width="344dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="367dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/style_main"
         android:ems="10"
-        android:hint="Nama"
+        android:fontFamily="@font/montserrat"
+        android:hint="Nama Lengkap"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/inputEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColorHint="#AFB0B7"
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
         android:id="@+id/inputEmail"
-        android:layout_width="344dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="27dp"
+        android:layout_width="367dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/style_main"
         android:ems="10"
+        android:fontFamily="@font/montserrat"
         android:hint="Email"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/inputPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textColorHint="#AFB0B7"
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDomisili" />
 
     <EditText
         android:id="@+id/inputPassword"
-        android:layout_width="344dp"
-        android:layout_height="49dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="367dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/style_main"
         android:ems="10"
-        android:hint="Password"
+        android:fontFamily="@font/montserrat"
+        android:hint="Kata Sandi"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColorHint="#AFB0B7"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
     <Button
         android:id="@+id/btnDaftar"
-        android:layout_width="344dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="58dp"
+        android:layout_width="184dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/style_button"
+        android:fontFamily="@font/montserrat"
         android:text="Daftar"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="13dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/konfirPassword" />
+
+    <EditText
+        android:id="@+id/inputDate"
+        android:layout_width="367dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/style_main"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Tanggal Lahir(DDMMYY)"
+        android:inputType="date"
+        android:textColorHint="#AFB0B7"
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNama" />
+
+    <EditText
+        android:id="@+id/inputDomisili"
+        android:layout_width="367dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/style_main"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Domisili"
+        android:inputType="textPersonName"
+        android:textColorHint="#AFB0B7"
+        android:textSize="13dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDate" />
+
+    <EditText
+        android:id="@+id/konfirPassword"
+        android:layout_width="367dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/style_main"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Konfirmasi Kata Sandi"
+        android:inputType="textPassword"
+        android:textColorHint="#AFB0B7"
+        android:textSize="13dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:fontFamily="sans-serif"
+        android:hint="Nama Lengkap"
+        android:text="Daftar Akun"
+        android:textColor="#000"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
