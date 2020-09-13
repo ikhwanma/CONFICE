@@ -23,7 +23,8 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
     @Override
     protected void onBindViewHolder(@NonNull final MyViewHolder holder, int position, @NonNull final Model model) {
         holder.nama.setText(model.getNama());
-        holder.bidang.setText(model.getBidang());
+        holder.bidang.setText(model.getPosisi());
+        holder.deskripsi.setText(model.getDeskripsi());
     }
 
     @NonNull
@@ -34,11 +35,12 @@ public class MyAdapter extends FirebaseRecyclerAdapter<Model, MyAdapter.MyViewHo
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView nama,bidang;
+        TextView nama,bidang,deskripsi;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             nama = itemView.findViewById(R.id.viewNamaa);
             bidang = itemView.findViewById(R.id.textViewBidang);
+            deskripsi = itemView.findViewById(R.id.viewDeskripsi);
         }
     }
 }

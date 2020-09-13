@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LowonganActivity">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:text="Buka Lowongan Pekerjaan"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inputPosisi"
+        android:layout_marginTop="38dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        android:layout_width="319dp"
+        android:layout_height="46dp"
+        android:background="@drawable/style_main"
+        android:hint="Posisi yang dicari"
+        android:textSize="15dp"
+        android:fontFamily="@font/montserrat"/>
+
+    <EditText
+        android:id="@+id/inputNama"
+        android:layout_width="319dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/style_main"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Nama Perusahaan"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputPosisi" />
+
+    <EditText
+        android:id="@+id/inputDeskripsi"
+        android:layout_width="319dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/style_main"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Deskripsi"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNama" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="184dp"
+        android:layout_height="46dp"
+        android:background="@drawable/style_button"
+        android:textColor="#FFF"
+        android:layout_marginTop="44dp"
+        android:text="Submit"
+        android:fontFamily="@font/montserrat"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputDeskripsi" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

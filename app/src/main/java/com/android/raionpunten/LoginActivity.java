@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         btnDaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this,PilihDaftarActivity.class);
+                Intent intent = new Intent(LoginActivity.this,DaftarAdminActivity.class);
                 startActivity(intent);
             }
         });
@@ -84,17 +84,9 @@ public class LoginActivity extends AppCompatActivity {
                         if(userData.getPassword().equals(password)){
                             Toast.makeText(LoginActivity.this, "Logged In Successfull", Toast.LENGTH_SHORT).show();
                             loadingbar.dismiss();
-                            if(userData.getJabatan().equals("admin")){
-                                Intent intent = new Intent(LoginActivity.this,HomeAdminActivity.class);
+                                Intent intent = new Intent(LoginActivity.this,cek.class);
                                 Prevalent.currentOnlineUser = userData;
                                 startActivity(intent);
-                                Toast.makeText(LoginActivity.this, "Anda Login Sebagai Admin", Toast.LENGTH_SHORT).show();
-                            }else if(userData.getJabatan().equals("karyawan")){
-                                Intent intent = new Intent(LoginActivity.this,KaryawanActivity.class);
-                                Prevalent.currentOnlineUser = userData;
-                                startActivity(intent);
-                                Toast.makeText(LoginActivity.this, "Anda Login sebagai Karyawan", Toast.LENGTH_SHORT).show();
-                            }
                         }else{
                             loadingbar.dismiss();
                             Toast.makeText(LoginActivity.this, "Password incorrect", Toast.LENGTH_SHORT).show();

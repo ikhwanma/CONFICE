@@ -1,24 +1,31 @@
 package com.android.raionpunten;
 
 public class Model {
-    private String Bidang;
-
-    private String Nama;
+    private String Posisi,Deskripsi,Nama;
 
     public Model() {
     }
 
-    public Model(String bidang, String nama) {
-        Bidang = bidang;
+    public Model(String posisi, String deskripsi, String nama) {
+        Posisi = posisi;
+        Deskripsi = deskripsi;
         Nama = nama;
     }
 
-    public String getBidang() {
-        return Bidang;
+    public String getPosisi() {
+        return Posisi;
     }
 
-    public void setBidang(String bidang) {
-        Bidang = bidang;
+    public void setPosisi(String posisi) {
+        Posisi = posisi;
+    }
+
+    public String getDeskripsi() {
+        return Deskripsi;
+    }
+
+    public void setDeskripsi(String deskripsi) {
+        Deskripsi = deskripsi;
     }
 
     public String getNama() {

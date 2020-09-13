@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BerandaActivity"></activity>
+        <activity android:name=".cek"></activity>
+        <activity android:name=".KantorActivity" />
+        <activity android:name=".MasukKantorActivity" />
+        <activity android:name=".LowonganActivity" />
+        <activity android:name=".BerandaActivity" />
         <activity android:name=".HomeAdminActivity" />
         <activity android:name=".KaryawanActivity" />
-        <activity android:name=".AdminActivity" />
-        <activity android:name=".PilihDaftarActivity" />
         <activity android:name=".CariKerjaActivity" />
         <activity android:name=".BuatKerjaActivity" />
         <activity android:name=".HomeActivity" />

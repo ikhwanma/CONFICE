@@ -17,7 +17,7 @@ public class HomeAdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_admin);
         btnBuat = findViewById(R.id.btnBuat);
-        btnSubmit = findViewById(R.id.btnSubmit);
+        btnSubmit = findViewById(R.id.btnCari);
         inputKode = findViewById(R.id.inputKode);
 
         btnBuat.setOnClickListener(new View.OnClickListener() {

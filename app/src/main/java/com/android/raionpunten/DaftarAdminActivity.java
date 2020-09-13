@@ -55,8 +55,6 @@ public class DaftarAdminActivity extends AppCompatActivity {
     }
 
     public void createAccount(){
-        Bundle extras = getIntent().getExtras();
-        String jabatan = extras.getString("jenis");
         String nama = inputNama.getText().toString();
         String tanggal = inputDate.getText().toString();
         String domisili = inPutDomisili.getText().toString();
@@ -86,13 +84,13 @@ public class DaftarAdminActivity extends AppCompatActivity {
             loadingbar.setMessage("Please wait!");
             loadingbar.setCanceledOnTouchOutside(false);
             loadingbar.show();
-            registerUser(nama, email, password,tanggal,domisili,jabatan);
+            registerUser(nama, email, password,tanggal,domisili);
         }
 
 
     }
     private void registerUser(final String nama, final String email, final String password,final String tanggal,
-                              final String domisili,final String jabatan) {
+                              final String domisili) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -100,7 +98,7 @@ public class DaftarAdminActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             loadingbar.dismiss();
                             FirebaseUser user = mAuth.getCurrentUser();
-                            ValidateUser(nama, email, password,tanggal,domisili,jabatan);
+                            ValidateUser(nama, email, password,tanggal,domisili);
                             Intent intent = new Intent(DaftarAdminActivity.this,LoginActivity.class);
                             startActivity(intent);
                             Toast.makeText(DaftarAdminActivity.this, "Account created", Toast.LENGTH_SHORT).show();
@@ -121,7 +119,7 @@ public class DaftarAdminActivity extends AppCompatActivity {
     }
 
     private void ValidateUser(final String nama, String emailAsli, final String password,final String tanggal,
-                              final String domisili,final String jabatan) {
+                              final String domisili) {
         final DatabaseReference Rootref;
         Rootref = FirebaseDatabase.getInstance().getReference();
         final String email = emailAsli.replace("@","%1").replace(".","%2");
@@ -132,9 +130,8 @@ public class DaftarAdminActivity extends AppCompatActivity {
 
                 HashMap<String, Object> userdataMap = new HashMap<>();
                 userdataMap.put("nama",nama);
-                userdataMap.put("tanggal lahir",tanggal);
+                userdataMap.put("tanggal",tanggal);
                 userdataMap.put("domisili",domisili);
-                userdataMap.put("jabatan",jabatan);
                 userdataMap.put("email", email);
                 userdataMap.put("password",password);
 

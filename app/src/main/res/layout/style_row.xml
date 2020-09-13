@@ -15,14 +15,14 @@
 
         <TextView
             android:id="@+id/viewNamaa"
-            android:layout_width="84dp"
-            android:layout_height="22dp"
+            android:layout_width="73dp"
+            android:layout_height="34dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:fontFamily="sans-serif"
             android:text="Nama"
-            android:textColor="#FFFFFF"
-            android:textSize="15dp"
+            android:textColor="#000"
+            android:textSize="23dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,13 +31,24 @@
             android:layout_width="92dp"
             android:layout_height="21dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif"
             android:text="Bidang"
-            android:textColor="#FFFFFF"
+            android:textColor="#000"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/viewNamaa" />
+
+        <TextView
+            android:id="@+id/viewDeskripsi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:text="Deskripsi"
+            android:textColor="#000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewBidang" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

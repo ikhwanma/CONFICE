@@ -1,16 +1,17 @@
 package com.android.raionpunten;
 
 public class User {
-    private String nama,email,password,jabatan;
+    private String nama,email,password,tanggal,domisili;
 
     public User() {
     }
 
-    public User(String nama, String email, String password, String jabatan) {
+    public User(String nama, String email, String password, String tanggal, String domisili) {
         this.nama = nama;
         this.email = email;
         this.password = password;
-        this.jabatan = jabatan;
+        this.tanggal = tanggal;
+        this.domisili = domisili;
     }
 
     public String getNama() {
@@ -37,11 +38,19 @@ public class User {
         this.password = password;
     }
 
-    public String getJabatan() {
-        return jabatan;
+    public String getTanggal() {
+        return tanggal;
     }
 
-    public void setJabatan(String jabatan) {
-        this.jabatan = jabatan;
+    public void setTanggal(String tanggal) {
+        this.tanggal = tanggal;
+    }
+
+    public String getDomisili() {
+        return domisili;
+    }
+
+    public void setDomisili(String domisili) {
+        this.domisili = domisili;
     }
 }
