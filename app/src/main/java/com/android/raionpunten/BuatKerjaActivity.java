@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class BuatKerjaActivity extends AppCompatActivity {
-    private EditText inputNama,inputBidang;
+    private EditText inputNama,inputBidang,inputDomisili,inputPemilik;
     private Button btnSetuju;
 
     @Override
@@ -28,6 +28,8 @@ public class BuatKerjaActivity extends AppCompatActivity {
         inputNama = findViewById(R.id.inputNama);
         inputBidang = findViewById(R.id.inputBidang);
         btnSetuju = findViewById(R.id.btnSetuju);
+        inputDomisili = findViewById(R.id.inputDomisili);
+        inputPemilik = findViewById(R.id.inputPemilik);
         btnSetuju.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,7 +43,8 @@ public class BuatKerjaActivity extends AppCompatActivity {
     public void BuatKerja(){
         final String nama = inputNama.getText().toString();
         final String bidang = inputBidang.getText().toString();
-
+        final String domisili = inputDomisili.getText().toString();
+        final String pemilik = inputPemilik.getText().toString();
         final DatabaseReference Rootref;
         Rootref = FirebaseDatabase.getInstance().getReference();
         Rootref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -49,8 +52,9 @@ public class BuatKerjaActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 HashMap<String, Object> userdataMap = new HashMap<>();
                 userdataMap.put("Nama",nama);
+                userdataMap.put("Domisili",domisili);
                 userdataMap.put("Bidang",bidang);
-
+                userdataMap.put("Pemilik",pemilik);
                 Rootref.child("Perusahaan").child(nama).updateChildren(userdataMap);
             }
 

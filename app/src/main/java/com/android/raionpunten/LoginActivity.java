@@ -85,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "Logged In Successfull", Toast.LENGTH_SHORT).show();
                             loadingbar.dismiss();
                             if(userData.getJabatan().equals("admin")){
-                                Intent intent = new Intent(LoginActivity.this,AdminActivity.class);
+                                Intent intent = new Intent(LoginActivity.this,HomeAdminActivity.class);
                                 Prevalent.currentOnlineUser = userData;
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Anda Login Sebagai Admin", Toast.LENGTH_SHORT).show();
