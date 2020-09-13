@@ -4,6 +4,124 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".BerandaActivity">
+
+    <ImageView
+        android:layout_width="143dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/elips"
+        app:layout_constraintStart_toEndOf="@+id/textViewberanda"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/elip2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewberanda" />
+
+    <TextView
+        android:id="@+id/textViewberanda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:fontFamily="@font/playfair_display"
+        android:text="Beranda"
+        android:textColor="#FFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="414dp"
+        android:layout_height="464dp"
+        android:background="@drawable/style_beranda"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btncaripekerjaan"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/style_buttonberanda"
+        android:text="     Cari Pekerjaan"
+        android:fontFamily="@font/montserrat"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:textAlignment="textStart"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <Button
+        android:id="@+id/btnmasukkantor"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/style_buttonberanda"
+        android:text="     Masuk Kantor"
+        android:fontFamily="@font/montserrat"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        android:textAlignment="textStart"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/btncaripekerjaan" />
+
+    <Button
+        android:id="@+id/btnbuatkantor"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/style_buttonberanda"
+        android:text="     Buat Kantor"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/btnmasukkantor" />
+
+    <Button
+        android:id="@+id/btnbuatlowongan"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/style_buttonberanda"
+        android:text="     Buat Lowongan"
+        android:textSize="14sp"
+        android:fontFamily="@font/montserrat"
+        android:textAllCaps="false"
+        android:textAlignment="textStart"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/btnbuatkantor" />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

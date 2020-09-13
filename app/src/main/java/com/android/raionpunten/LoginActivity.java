@@ -48,6 +48,14 @@ public class LoginActivity extends AppCompatActivity {
                 loginUser();
             }
         });
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToBeranda= new Intent(LoginActivity.this,BerandaActivity.class);
+                startActivity(goToBeranda);
+            }
+        });
     }
 
 
