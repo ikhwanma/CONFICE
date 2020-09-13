@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <Button
+        android:id="@+id/btnCari"
+        android:layout_width="242dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="124dp"
+        android:text="Cari Kerja"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnMasuk"
+        android:layout_width="238dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="60dp"
+        android:text="Masuk Kantor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCari" />
+
+    <Button
+        android:id="@+id/btnBuat"
+        android:layout_width="230dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="57dp"
+        android:text="Buat Kantor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnMasuk" />
+</androidx.constraintlayout.widget.ConstraintLayout>

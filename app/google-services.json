@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "972527729163",
+    "firebase_url": "https://punten-7b061.firebaseio.com",
+    "project_id": "punten-7b061",
+    "storage_bucket": "punten-7b061.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:972527729163:android:21cf78623937215fca650e",
+        "android_client_info": {
+          "package_name": "com.android.raionpunten"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "972527729163-anc91n8gf92lck3sq2f160u1tk7imb9l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.raionpunten",
+            "certificate_hash": "a3a9b1471cd9e66d8f4a8e34164c5eaaadf24e0a"
+          }
+        },
+        {
+          "client_id": "972527729163-1mc1j5uo6doc1g6i1ks1148kqfgglugn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVeAX6uKAr_QMdi_I9rBvuS3I_IhSZ_U8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "972527729163-1mc1j5uo6doc1g6i1ks1148kqfgglugn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
