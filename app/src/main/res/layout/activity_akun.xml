@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AkunActivity">
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="418dp"
+        android:layout_height="322dp"
+        android:background="@drawable/style_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="298dp"
+        android:layout_height="435dp"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/style_beranda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="44dp"
+        android:text="Account"
+        android:textColor="#FFF"
+        android:textSize="28dp"
+        android:fontFamily="@font/playfair_display"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editNama"
+        android:layout_width="273dp"
+        android:layout_height="46dp"
+        android:hint="Nama Lengkap"
+        android:fontFamily="@font/montserrat"
+        android:textSize="11dp"
+        android:background="@drawable/style_main"
+        android:ems="10"
+        android:layout_marginTop="52dp"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <EditText
+        android:id="@+id/editTanggal"
+        android:layout_width="273dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/style_main"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Tanggal Lahir(DDMYY)"
+        android:inputType="date"
+        android:textSize="11dp"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/editNama" />
+
+    <EditText
+        android:id="@+id/editDomisili"
+        android:layout_width="273dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/style_main"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="Domisili"
+        android:inputType="textPersonName"
+        android:textSize="11dp"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/editTanggal" />
+
+    <Button
+        android:id="@+id/btnSimpan"
+        android:layout_width="298dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="29dp"
+        android:background="@drawable/style_button"
+        android:fontFamily="@font/montserrat"
+        android:text="Simpan Perubahan"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+</androidx.constraintlayout.widget.ConstraintLayout>

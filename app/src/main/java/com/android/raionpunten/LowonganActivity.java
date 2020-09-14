@@ -34,9 +34,6 @@ public class LowonganActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 BuatLowongan();
-                Intent intent = new Intent(LowonganActivity.this,HomeActivity.class);
-                startActivity(intent);
-                Toast.makeText(LowonganActivity.this, "Lowongan", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -44,22 +41,38 @@ public class LowonganActivity extends AppCompatActivity {
         final String nama = inputNama.getText().toString();
         final String posisi = inputPosisi.getText().toString();
         final String deskripsi = inputDeskripsi.getText().toString();
-        final DatabaseReference Rootref;
-        Rootref = FirebaseDatabase.getInstance().getReference();
-        Rootref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                HashMap<String, Object> userdataMap = new HashMap<>();
-                userdataMap.put("Nama",nama);
-                userdataMap.put("Posisi",posisi);
-                userdataMap.put("Deskripsi",deskripsi);
-                Rootref.child("Perusahaan").child(nama).updateChildren(userdataMap);
-            }
+        if(posisi.isEmpty()){
+            inputPosisi.setError("Posisi Tidak Boleh Kosong");
+            inputPosisi.setFocusable(true);
+        }else if(nama.isEmpty()){
+            inputNama.setError("Nama Tidak Boleh Kosong");
+            inputNama.setFocusable(true);
+        }else if(deskripsi.isEmpty()){
+            inputDeskripsi.setError("Deskripsi Tidak Boleh Kosong");
+            inputDeskripsi.setFocusable(true);
+        }else{
+            final DatabaseReference Rootref;
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+            Rootref = FirebaseDatabase.getInstance().getReference();
+            Rootref.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    HashMap<String, Object> userdataMap = new HashMap<>();
+                    userdataMap.put("Nama",nama);
+                    userdataMap.put("Posisi",posisi);
+                    userdataMap.put("Deskripsi",deskripsi);
+                    Rootref.child("Perusahaan").child(nama).updateChildren(userdataMap);
+                    Intent intent = new Intent(LowonganActivity.this,BerandaActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(LowonganActivity.this, "Lowongan Pekerjaan Dibuat", Toast.LENGTH_SHORT).show();
+                }
 
-            }
-        });
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
+
     }
 }

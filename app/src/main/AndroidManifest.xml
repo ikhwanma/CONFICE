@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".cek"></activity>
+        <activity android:name=".AkunActivity"></activity>
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".cek" />
         <activity android:name=".KantorActivity" />
         <activity android:name=".MasukKantorActivity" />
         <activity android:name=".LowonganActivity" />

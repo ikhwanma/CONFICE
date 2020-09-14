@@ -12,6 +12,7 @@ public class BerandaActivity extends AppCompatActivity {
     private Button btnmasukkantor;
     private Button btnbuatkantor;
     private Button btnbuatlowongan;
+    private Button btnProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,15 @@ public class BerandaActivity extends AppCompatActivity {
         btnmasukkantor = findViewById(R.id.btnmasukkantor);
         btncarikerja = findViewById(R.id.btncaripekerjaan);
         btnbuatlowongan = findViewById(R.id.btnbuatlowongan);
+        btnProfile = findViewById(R.id.btnProfile);
+
+        btnProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(BerandaActivity.this,ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btncarikerja.setOnClickListener(new View.OnClickListener() {
             @Override

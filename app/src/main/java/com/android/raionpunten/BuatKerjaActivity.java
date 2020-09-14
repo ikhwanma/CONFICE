@@ -36,9 +36,7 @@ public class BuatKerjaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 BuatKerja();
-                Intent intent = new Intent(BuatKerjaActivity.this,HomeActivity.class);
-                startActivity(intent);
-                Toast.makeText(BuatKerjaActivity.this, "Kantor Dibuat", Toast.LENGTH_SHORT).show();
+
             }
         });
     }
@@ -49,23 +47,45 @@ public class BuatKerjaActivity extends AppCompatActivity {
         final String domisili = inputDomisili.getText().toString();
         final String pemilik = inputPemilik.getText().toString();
         final String kode = inputKode.getText().toString();
-        final DatabaseReference Rootref;
-        Rootref = FirebaseDatabase.getInstance().getReference();
-        Rootref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                HashMap<String, Object> userdataMap = new HashMap<>();
-                userdataMap.put("Nama",nama);
-                userdataMap.put("Domisili",domisili);
-                userdataMap.put("Bidang",bidang);
-                userdataMap.put("Pemilik",pemilik);
-                userdataMap.put("Kode",kode);
-                Rootref.child("Kantor").child(kode).updateChildren(userdataMap);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
+        if(nama.isEmpty()){
+            inputNama.setError("Nama Tidak Boleh Kosong");
+            inputNama.setFocusable(true);
+        }else if(bidang.isEmpty()){
+            inputBidang.setError("Bidang Tidak Boleh Kosong");
+            inputBidang.setFocusable(true);
+        }else if(domisili.isEmpty()){
+            inputDomisili.setError("Domisili Tidak Boleh Kosong");
+            inputDomisili.setFocusable(true);
+        }else if(pemilik.isEmpty()){
+            inputPemilik.setError("Domisili Tidak Boleh Kosong");
+            inputPemilik.setFocusable(true);
+        }else if(kode.isEmpty()){
+            inputKode.setError("Kode Tidak Boleh Kosong");
+            inputKode.setFocusable(true);
+        }else{
+            final DatabaseReference Rootref;
+            Rootref = FirebaseDatabase.getInstance().getReference();
+            Rootref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    HashMap<String, Object> userdataMap = new HashMap<>();
+                    userdataMap.put("Nama",nama);
+                    userdataMap.put("Domisili",domisili);
+                    userdataMap.put("Bidang",bidang);
+                    userdataMap.put("Pemilik",pemilik);
+                    userdataMap.put("Kode",kode);
+                    Rootref.child("Kantor").child(kode).updateChildren(userdataMap);
+                    Intent intent = new Intent(BuatKerjaActivity.this,BerandaActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(BuatKerjaActivity.this, "Kantor Dibuat", Toast.LENGTH_SHORT).show();
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
+                }
+            });
+
+        }
+
     }
 }
