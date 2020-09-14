@@ -49,13 +49,13 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToBeranda= new Intent(LoginActivity.this,BerandaActivity.class);
-                startActivity(goToBeranda);
-            }
-        });
+//        btnLogin.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent goToBeranda= new Intent(LoginActivity.this,BerandaActivity.class);
+//                startActivity(goToBeranda);
+//            }
+//        });
     }
 
 
@@ -92,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                         if(userData.getPassword().equals(password)){
                             Toast.makeText(LoginActivity.this, "Logged In Successfull", Toast.LENGTH_SHORT).show();
                             loadingbar.dismiss();
-                                Intent intent = new Intent(LoginActivity.this,cek.class);
+                                Intent intent = new Intent(LoginActivity.this,BerandaActivity.class);
                                 Prevalent.currentOnlineUser = userData;
                                 startActivity(intent);
                         }else{
